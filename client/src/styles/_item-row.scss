@@ -1,0 +1,38 @@
+.item-row {
+    margin-bottom: 4px;
+    padding: 10px;
+    border-bottom: 1px solid #ededed;
+
+    &:last-of-type {
+        border: 0;
+    }
+}
+
+.item-row__link {
+    display: flex;
+}
+
+.item-row__picture {
+    display: inline-block;
+    margin-right: 20px;
+
+    img {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+.item-row__data {
+    display: inline-block;
+    color: #333333;
+    padding: 8px 0;
+}
+
+.item-row__price {
+    font-weight: 600;
+}
+
+.item-row__title {
+    margin-top: 10px;
+    font-size: 13px;
+}

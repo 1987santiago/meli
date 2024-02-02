@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { redirect } from 'react-router-dom';
 
 const Search = ({ query, onSubmit }) => {
     const [_query, setQuery] = useState(query);
@@ -29,11 +28,16 @@ const Search = ({ query, onSubmit }) => {
     };
 
     return (
-        <form action='/items' onSubmit={onSubmitHandler}>
-            <input type='search' name='search' id='search' onChange={onChange} value={_query} />
-            <button type='submit'>Search</button>
-        </form>
+        <div className='search'>
+            <a className='search__logo' href="/" title="Ir a Mercado Libre">
+                <span>Mercado Libre</span>
+            </a>
+            <form className='search__form' action='/items' onSubmit={onSubmitHandler}>
+                <input type='search' name='search' id='search' onChange={onChange} value={_query} />
+                <button type='submit'><i className='search__icon'>Buscar</i></button>
+            </form>
+        </div>
     );
-};
-
+}; 
+ 
 export default Search; 

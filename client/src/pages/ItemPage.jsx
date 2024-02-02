@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Item from '../components/Item';
 import Breadcrumb from '../components/Breadcrumb';
-import Navigator from '../components/Navigator';
 import Search from '../components/Search';
 
 const ItemPage = () => {
@@ -36,9 +35,10 @@ const ItemPage = () => {
     return (
         <>
             <Search onSubmit={() => { }} />
-            <Navigator />
             <Breadcrumb categories={categories} />
-            <Item item={item} />
+            <main>
+                <Item item={item} />
+            </main>
         </>
     )
 };

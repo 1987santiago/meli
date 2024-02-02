@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import ItemPage from './pages/ItemPage';
 import NotFoundPage from './pages/NotFoundPage';
+import './styles/index.scss';
 
 const App = () => {
   return (

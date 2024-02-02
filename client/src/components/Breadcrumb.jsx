@@ -3,13 +3,18 @@ import React from 'react';
 const Breadcrumb = ({ categories }) => {
 
     return (
-        <ul>
-            {
-                categories.map((category, i) =>
-                    <li key={i}>{category.name} <span>></span></li>
-                )
-            }
-        </ul>
+        <div className="breadcrumb">
+            <ul className='breadcrumb__list'>
+                {
+                    categories.map((category, i) =>
+                        <li className="breadcrumb__item" key={i}>
+                            {category.name}
+                            <span className='breadcrumb__arrow'>></span>
+                        </li>
+                    )
+                }
+            </ul>
+        </div>
     );
 };
 

@@ -1,0 +1,48 @@
+.item {
+    display: flex;
+}
+
+.item__picture {
+    width: 65%;
+
+    img {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.item__data {
+    width: 30%;
+}
+
+.item__title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.item__price {
+    font-size: 28px;
+}
+
+.item__action {
+    background-color: #3483fa;
+    border: 0;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    margin-top: 40px;
+    padding: 12px;
+    width: 100%;
+}
+
+.item__subtitle {
+    color: #999999;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.item__description {
+    color: #999999;
+}
