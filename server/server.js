@@ -4,7 +4,8 @@ const {
     getItems,
     getItem,
     getDescription,
-    getPriceDetail
+    getPriceDetail,
+    getCategories
 } = require('./middlewares');
 const app = express();
 const port = 3001;
@@ -15,8 +16,8 @@ const port = 3001;
  * @endpoint https://api.mercadolibre.com/sites/MLA/search?q=​:query 
  **/
 app.get('/api/items', getItems, getPriceDetail, signResponse, async (req, res, next) => {
-    console.log('res.locals.body');
-    console.dir(res.locals.body, { depth: 3 });
+    console.log('call to /api/items');
+    // console.dir(res.locals.body, { depth: 3 });
     res.send(JSON.stringify(res.locals.body));
 });
 
@@ -28,8 +29,20 @@ app.get('/api/items', getItems, getPriceDetail, signResponse, async (req, res, n
  * @endpoint https://api.mercadolibre.com/items/​:id​/description
 **/
 app.get('/api/items/:id', getItem, getPriceDetail, getDescription, signResponse, async (req, res, next) => {
-    console.log('res.locals.body');
-    console.dir(res.locals.body, { depth: 3 });
+    console.log('call to /api/items/:id');
+    // console.dir(res.locals.body, { depth: 3 });
+    res.send(JSON.stringify(res.locals.body));
+});
+
+/**
+ * @path /api/items/:id
+ * @query ?ids=:id,:id,id
+ * @endpoint https://api.mercadolibre.com/items​/:id,
+ * @endpoint https://api.mercadolibre.com/items/​:id​/description
+**/
+app.get('/api/categories/:id', getCategories, signResponse, async (req, res, next) => {
+    console.log('call to /api/categories/:id');
+    // console.dir(res.locals.body, { depth: 3 });
     res.send(JSON.stringify(res.locals.body));
 });
 

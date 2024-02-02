@@ -7,7 +7,8 @@ const getFormattedItem = (item) => {
         price: item.price,
         picture: item.thumbnail,
         condition: item.condition,
-        free_shipping: item.shipping.free_shipping
+        free_shipping: item.shipping.free_shipping,
+        category_id: item.category_id
     }
 };
 

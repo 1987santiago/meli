@@ -41,6 +41,17 @@ const getItem = (req, res, next) => {
         });
 };
 
+const getCategories = async (req, res, next) => {
+    const CATEGORY_ID = req?.params?.id;
+    const endpoint = `https://api.mercadolibre.com/categories/${CATEGORY_ID}`;
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(data => {
+            res.locals.body = data;
+            next();
+        })
+};
+
 const getDescription = async (req, res, next) => {
     const ITEM_ID = req?.params?.id;
     const endpoint = `https://api.mercadolibre.com/items/${ITEM_ID}/description`;
@@ -75,4 +86,5 @@ module.exports = {
     getItem,
     getDescription,
     getPriceDetail,
+    getCategories,
 }
