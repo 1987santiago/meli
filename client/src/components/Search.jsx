@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { redirect } from 'react-router-dom';
 
 const Search = ({ query, onSubmit }) => {
     const [_query, setQuery] = useState(query);
@@ -15,8 +16,20 @@ const Search = ({ query, onSubmit }) => {
         setQuery(ev.target.value);
     };
 
+    const onSubmitHandler = (ev) => {
+        ev.preventDefault();
+        console.log('Search::onSubmit()', ev.target.search.value);
+        let regex = /(^[A-Z]{3}\d{8,16}$)/gm;
+        const searchValue = ev.target.search.value;
+        if (regex.test(searchValue)) {
+            window.location.href = window.location.origin + `/items/${searchValue}`;
+        } else {
+            ev.target.submit();
+        }
+    };
+
     return (
-        <form action='/items'>
+        <form action='/items' onSubmit={onSubmitHandler}>
             <input type='search' name='search' id='search' onChange={onChange} value={_query} />
             <button type='submit'>Search</button>
         </form>
