@@ -4,9 +4,9 @@ import Search from '../components/Search';
 const HomePage = () => {
     return (
         <>
-            <Search />
+            <Search onSubmit={() => { }} />
             <main>
-                Soy la home
+                ...
             </main>
         </>
     );

@@ -33,11 +33,11 @@ const Search = ({ query, onSubmit }) => {
                 <span>Mercado Libre</span>
             </a>
             <form className='search__form' action='/items' onSubmit={onSubmitHandler}>
-                <input type='search' name='search' id='search' onChange={onChange} value={_query} />
-                <button type='submit'><i className='search__icon'>Buscar</i></button>
+                <input className='search__input' type='search' name='search' id='search' onChange={onChange} value={_query} />
+                <button className='search__button' type='submit'><span>Buscar</span></button>
             </form>
         </div>
     );
-}; 
- 
+};
+
 export default Search; 
